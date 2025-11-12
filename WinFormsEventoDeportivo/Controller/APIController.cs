@@ -26,7 +26,7 @@ namespace WinFormsEventoDeportivo.Controller
             var lista = await JsonSerializer.DeserializeAsync<List<EventoDeportivoModel>>(stream, opts).ConfigureAwait(false);
             return lista ?? new List<EventoDeportivoModel>();
         }
-        public async Task<EventoDeportivoModel?> PostAlumnoAsync(EventoDeportivoModel alumno, string url = "https://localhost:7199/api/EventoDeportivo")
+        public async Task<EventoDeportivoModel?> PostEventosDeportivosAsync(EventoDeportivoModel alumno, string url = "https://localhost:7199/api/EventoDeportivo")
         {
             if (alumno == null) return null;
 
@@ -51,7 +51,7 @@ namespace WinFormsEventoDeportivo.Controller
         }
 
         #region--> metodo PUT
-        public async Task<bool> PutAlumnoAsync(int id, EventoDeportivoModel alumno, string baseUrl = "https://localhost:7199/api/EventoDeportivo")
+        public async Task<bool> PutEventosDeportivosAsync(int id, EventoDeportivoModel alumno, string baseUrl = "https://localhost:7199/api/EventoDeportivo")
         {
             if (alumno == null) return false;
 
@@ -73,7 +73,7 @@ namespace WinFormsEventoDeportivo.Controller
         #endregion
 
         #region--> metodo DELETE
-        public async Task<bool> DeleteAlumnoAsync(int id, string baseUrl = "https://localhost:7199/api/EventoDeportivo")
+        public async Task<bool> DeleteEventosDeportivosAsync(int id, string baseUrl = "https://localhost:7199/api/EventoDeportivo")
         {
             try
             {
